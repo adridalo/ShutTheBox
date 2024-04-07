@@ -8,6 +8,7 @@ ShutTheBox game written in ReactJS
 - If you roll a value thats already been filled in, you lose
 - If you complete the whole board and fill in all the tiles, you win.
 - Have fun!
+- If you lose or win, a message will appear letting you know the outcome of the game, then after 2 seconds, the window will refresh and you may play again!
 
 ![ShutTheBox Game in Action!](image.png)
 
