@@ -15,8 +15,7 @@ const Board = ({ total, reset }) => {
     }
 
     const onButtonStatus = () => {
-        const winStatusButton = document.querySelector('#win-status')
-        winStatusButton.style.display = 'block';
+        document.querySelector('#win-status').style.display = 'block';
         
     }
 
