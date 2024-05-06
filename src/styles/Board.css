@@ -1,5 +1,7 @@
 #board {
-    background-color: green;
+    background-image: url('/public/images/board.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     width: 80%;
     height: 50vh;
     border: 10px solid rgb(105, 54, 0);
