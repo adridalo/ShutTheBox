@@ -4,9 +4,13 @@ import Game from './Game';
 function App() {
     const [total, setTotal] = useState(0);
     const [rollStaus, setRollStatus] = useState('Roll to determine total!');
+    const audio = new Audio("./audio/diceroll.mp3")
+    audio.volume = 0.1
 
     const handleRoll = async () => {
+      document.getElementById("roll-btn").disabled = true
       setRollStatus('Rolling...')
+      audio.play()
       let currentRoll = 0;
       const rollPromises = [];
 
@@ -25,6 +29,7 @@ function App() {
 
       setTotal(currentRoll)
       setRollStatus('You rolled a ' + currentRoll)
+      document.getElementById("roll-btn").disabled = false
     }
 
     return (
