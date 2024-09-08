@@ -5,6 +5,8 @@ const Board = ({ total, reset }) => {
 
     const [selectedTiles, setSelectedTiles] = useState([]);
     const [winStatus, setWinStatus] = useState('');
+    const audio = new Audio()
+    audio.volume = 0.1
 
     const generateTiles = () => {
         const tiles = []
@@ -16,17 +18,21 @@ const Board = ({ total, reset }) => {
 
     const onButtonStatus = () => {
         document.querySelector('#win-status').style.display = 'block';
-        
     }
 
     useEffect(() => {
         if(total !== 0) {
             if(selectedTiles.includes(total)) {
+                audio.src = "./audio/wrong.mp3"
+                audio.play()
+                document.getElementById("roll-btn").disabled = true
                 setWinStatus('You Lose!')
                 onButtonStatus()
                 reset();
             }
             if(selectedTiles.length === 12) {
+                audio.src = "./audio/ding.mp3"
+                audio.play()
                 setWinStatus('You Win!')
                 onButtonStatus()
                 reset();
